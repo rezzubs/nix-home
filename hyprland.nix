@@ -15,7 +15,7 @@
       layout = "dwindle";
     };
 
-    exec-once = "swww init & swww img ~/Pictures/wallpapers/a.jpg";
+    exec-once = "swww init & swww img ~/.config/wallpapers/a.jpg";
 
     dwindle = {
       pseudotile = "yes";
