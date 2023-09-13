@@ -5,22 +5,24 @@
   
   home.stateVersion = "22.11";
 
-  wayland.windowManager.hyprland = import ./hyprland.nix;
-  
   home.username = "rezzubs";
   home.homeDirectory = "/home/rezzubs";
 
   home.packages = with pkgs; [
-    discord
+    discord-canary
     qpwgraph
-    obsidian
-    rnote
+    logseq
     steam
-    wofi
-    swww
     gimp
-    pavucontrol
+    hyperfine
+    gitui
+    neovide
+
+    haskell-language-server
+    lua-language-server
   ];
+
+  services.syncthing.enable = true;
 
   home.pointerCursor = {
     name = "Bibata-Modern-Ice";
@@ -28,21 +30,6 @@
     size = 24;
     gtk.enable = true;
     x11.enable = true;
-  };
-  
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Catppuccin-Mocha-Standard-Mauve-dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
-        variant = "mocha";
-      };
-    };
-    iconTheme = {
-      name = "Tela-circle-dark";
-      package = pkgs.tela-circle-icon-theme;
-    };
   };
   
   home.sessionPath = [
@@ -73,22 +60,6 @@
       hm = "home-manager";
       hms = "home-manager switch";
     };
-  };
-
-  programs.kitty = {
-    enable = true;
-    font = {
-      name = "FiraCode Nerd Font";
-      size = 15;
-    };
-    settings = {
-      tab_bar_style = "powerline";
-      tab_powerline_style = "round";
-      window_padding_width = 15;
-      linux_display_server = "x11";
-      # background_opacity = "0.5";
-    };
-    theme = "Catppuccin-Mocha";
   };
 
   programs.starship.enable = true;
