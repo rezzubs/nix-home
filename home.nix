@@ -9,28 +9,31 @@
   home.homeDirectory = "/home/rezzubs";
 
   home.packages = with pkgs; [
-    discord-canary
-    qpwgraph
-    logseq
-    steam
-    gimp
     hyperfine
     gitui
-    neovide
+    tokei
+
+    adw-gtk3
+    bibata-cursors
+    
+    flameshot
+    rnote
+    steam
+    discord
+    qpwgraph
+    logseq
+    gimp
+
+    libreoffice
+    qdigidoc
 
     haskell-language-server
     lua-language-server
+    nodejs_20
+    vscode-langservers-extracted
   ];
 
   services.syncthing.enable = true;
-
-  home.pointerCursor = {
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
-    size = 24;
-    gtk.enable = true;
-    x11.enable = true;
-  };
   
   home.sessionPath = [
     "$HOME/.local/bin"
